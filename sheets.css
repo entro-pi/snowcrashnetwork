@@ -9,7 +9,7 @@
   animation-name: slideopen;
 }
 .title {
-	display: block;
+	display: block-inline;
 	width: 55%;
 	background-color: Teal;
 
@@ -19,7 +19,7 @@
 }
 .row {
 	position: absolute;
-	height: 76px;
+
 
   animation-duration: 3s;
   animation-name: slideopen;
@@ -28,9 +28,9 @@
 
 .item {
 	position: relative;
-	height: 76px;
+
 	opacity: .5;
-	display: block;
+	display: block-inline;
 	width: 30%;
 	background-color: Cyan;
 	text-align: center;
@@ -40,11 +40,11 @@
 }
 .item:hover {
 	opacity:1;
-	padding-left: 1em;
 	padding-right: 1em;
 }
 table {
-	border-collapse: seperate;
+  border-spacing: 0;
+	border-collapse: collapse;
 }
 @keyframes slideopen {
   from {
@@ -56,7 +56,7 @@ table {
   }
 }
 tr {
-	padding-top: .75em;
-	padding-bottom: .75em;
+  padding:0;
+  margin:0;
 	background-color: Cyan;
 }
