@@ -1,0 +1,62 @@
+.wrapper {
+	display: block;
+	text-align: center;
+	background-color: Gray;
+	height: 1080px;
+  overflow: hidden;
+
+  animation-duration: 3s;
+  animation-name: slideopen;
+}
+.title {
+	display: block;
+	width: 55%;
+	background-color: Teal;
+
+
+  animation-duration: 3s;
+  animation-name: slideopen;
+}
+.row {
+	position: absolute;
+	height: 76px;
+
+  animation-duration: 3s;
+  animation-name: slideopen;
+}
+
+
+.item {
+	position: relative;
+	height: 76px;
+	opacity: .5;
+	display: block;
+	width: 30%;
+	background-color: Cyan;
+	text-align: center;
+	transition: opacity 1s;
+  animation-duration: 3s;
+  animation-name: slideopen;
+}
+.item:hover {
+	opacity:1;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+table {
+	border-collapse: seperate;
+}
+@keyframes slideopen {
+  from {
+    margin-left: 100%;
+  }
+
+  to {
+    margin-left:0%;
+  }
+}
+tr {
+	padding-top: .75em;
+	padding-bottom: .75em;
+	background-color: Cyan;
+}
