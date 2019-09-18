@@ -1,6 +1,5 @@
 .wrapper {
 	display: block;
-	text-align: center;
 	background-color: Gray;
 	height: 1080px;
   overflow: hidden;
@@ -30,13 +29,14 @@
 	position: relative;
 	height: 76px;
 	opacity: .5;
-	display: block;
+	display: inline-block;
 	width: 30%;
 	background-color: Cyan;
 	text-align: center;
 	transition: opacity 1s;
   animation-duration: 3s;
   animation-name: slideopen;
+  margin:0 auto;
 }
 .item:hover {
 	opacity:1;
@@ -45,6 +45,7 @@
 }
 table {
 	border-collapse: seperate;
+  table-align: left;
 }
 @keyframes slideopen {
   from {
@@ -59,4 +60,8 @@ tr {
 	padding-top: .75em;
 	padding-bottom: .75em;
 	background-color: Cyan;
+  margin-left:0%;
+}
+tc {
+  float:left;
 }
