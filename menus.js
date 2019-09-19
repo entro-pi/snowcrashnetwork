@@ -11,7 +11,7 @@ var values = {
   content: " <br>Content",
 };
 
-
+var characterShown = false;
 $(document).ready(function() {
 	$(".item").mousedown(function() {
 		console.log("LINK NOT FOUND");
@@ -20,7 +20,17 @@ $(document).ready(function() {
 	$(".item").mouseup(function() {
 		console.log("MOUSEUP ON HANDBOOKS");
 		console.log(values[this.id]);
- 		$(this).html(values[this.id]);
+    if (this.id == "character" && characterShown)
+      $(".content").removeClass("clickedContent")
+      $(".content").addClass("hideContent")
+      console.log(characterShown);
+      characterShown = false;
+    if (this.id == "character" && !characterShown)
+      $(".content").removeClass("hideContent")
+      $(".content").addClass("clickedContent")
+      console.log(characterShown);
+      characterShown = true;
+    $(this).html(values[this.id]);
 	});
 
 });

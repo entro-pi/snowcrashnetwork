@@ -30,7 +30,7 @@
 .content {
 	height: 76px;
 	opacity: .5;
-	display: grid;
+	display: none;
   grid-gap: 0px;
   grid-column: 2;
   grid-auto-rows: 76px;
@@ -39,14 +39,33 @@
 	text-align: center;
 	transition: opacity 1s;
   vertical-align: right;
-  animation: .25s 2 alternate bounce;
+  animation: .25s 2 alternate bounce, .5s 1 twirl;
 
+}
+
+.clickedContent {
+  animation-duration: .5s
+  animation-name: twirl;
+  display: grid;
+}
+.hideContent {
+ display: none;
 }
 .content:hover {
    opacity: 1;
     padding-left: 1em;
     padding-right: 1em;
 }
+@keyframes twirl {
+ from {
+   transform: rotate(0deg);
+ }
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
 .item {
 	height: 76px;
 	opacity: .5;
