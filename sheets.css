@@ -38,6 +38,19 @@
   animation-name: slideopen;
   margin:0 auto;
 }
+.item:active {
+	position: relative;
+	height: 76px;
+	opacity: .5;
+	display: inline-block;
+	width: 30%;
+	background-color: Cyan;
+	text-align: center;
+	transition: opacity 1s;
+  animation: .25s 2 alternate bounce, slideopen;
+  margin:0 auto;
+}
+
 .item:hover {
 	opacity:1;
 	padding-left: 1em;
@@ -47,6 +60,18 @@ table {
 	border-collapse: seperate;
   table-align: left;
 }
+@keyframes bounce {
+   from {
+      padding-left: 1em;
+      padding-right: 1em;
+   }
+  to {
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+}
+
+
 @keyframes slideopen {
   from {
     margin-left: 100%;
