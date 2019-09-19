@@ -13,23 +13,38 @@ var values = {
 
 var characterShown = false;
 $(document).ready(function() {
-	$(".item").mousedown(function() {
+
+  var animated = document.querySelectorAll('.content');
+  animated.forEach(function(item) {
+    item.onanimationend = () => {
+    console.log(item.className);
+    if (item.className == 'content clickedContent hideContent') {
+      console.log('Animation over');
+        console.log(item);
+        item.className = 'content clickedContent hideContent hiddenContent';
+      };
+  };
+  });
+
+  $(".item").mousedown(function() {
 		console.log("LINK NOT FOUND");
 		$(this).html(linkNot);
-	});
-	$(".item").mouseup(function() {
-		console.log("MOUSEUP ON HANDBOOKS");
-		console.log(values[this.id]);
+
     if (this.id == "character" && characterShown)
       $(".content").removeClass("clickedContent")
       $(".content").addClass("hideContent")
       console.log(characterShown);
       characterShown = false;
+  });
+	$(".item").mouseup(function() {
+		console.log("MOUSEUP ON HANDBOOKS");
+		console.log(values[this.id]);
     if (this.id == "character" && !characterShown)
-      $(".content").removeClass("hideContent")
+      $(".content").removeClass("hideContent hiddenContent")
       $(".content").addClass("clickedContent")
       console.log(characterShown);
       characterShown = true;
+
     $(this).html(values[this.id]);
 	});
 

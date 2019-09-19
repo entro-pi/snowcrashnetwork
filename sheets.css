@@ -49,6 +49,9 @@
   display: grid;
 }
 .hideContent {
+  animation: .5s sink;
+}
+.hiddenContent {
  display: none;
 }
 .content:hover {
@@ -63,8 +66,18 @@
   to {
     transform: rotate(360deg);
   }
-
 }
+@keyframes sink {
+ from {
+   width:30%;
+     display:grid;
+ }
+  to {
+    width:0%;
+    display:none;
+  }
+}
+
 
 .item {
 	height: 76px;
