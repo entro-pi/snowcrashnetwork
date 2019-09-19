@@ -8,6 +8,7 @@ var values = {
 	cypher: " <br>Cypher",
 	chatlog: " <br>Chatlog",
 	crash: " <br>Crash",
+  content: " <br>Content",
 };
 
 
@@ -19,7 +20,7 @@ $(document).ready(function() {
 	$(".item").mouseup(function() {
 		console.log("MOUSEUP ON HANDBOOKS");
 		console.log(values[this.id]);
-		$(this).html(values[this.id]);
+ 		$(this).html(values[this.id]);
 	});
 
 });
