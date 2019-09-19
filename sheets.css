@@ -1,8 +1,6 @@
 .wrapper {
-	display: block;
 	background-color: Gray;
 	height: 1080px;
-  overflow: hidden;
 
   animation-duration: 3s;
   animation-name: slideopen;
@@ -17,32 +15,46 @@
   animation-name: slideopen;
 }
 .row {
-	position: absolute;
+  display: grid;
+  grid-auto-rows: 76px;
+  grid-template-columns: 2;
+  grid-gap: 0px;
+  grid-column: 1;
 	height: 76px;
-
+  padding-left: 0;
   animation-duration: 3s;
   animation-name: slideopen;
 }
 
 
-.item {
-	position: relative;
+.content {
 	height: 76px;
 	opacity: .5;
-	display: inline-block;
+	display: grid;
+  grid-gap: 0px;
+  grid-column: 2;
+  grid-auto-rows: 76px;
+	width: 30%;
+	background-color: Cyan;
+	text-align: center;
+	transition: opacity 1s;
+  vertical-align: right;
+
+}
+.item {
+	height: 76px;
+	opacity: .5;
 	width: 30%;
 	background-color: Cyan;
 	text-align: center;
 	transition: opacity 1s;
   animation-duration: 3s;
   animation-name: slideopen;
-  margin:0 auto;
+
 }
 .item:active {
-	position: relative;
 	height: 76px;
 	opacity: .5;
-	display: inline-block;
 	width: 30%;
 	background-color: Cyan;
 	text-align: center;
@@ -88,5 +100,4 @@ tr {
   margin-left:0%;
 }
 tc {
-  float:left;
 }
