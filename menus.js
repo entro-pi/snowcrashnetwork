@@ -14,6 +14,15 @@ var values = {
 var characterShown = false;
 $(document).ready(function() {
 
+  const AudioContext = window.AudioContext;
+  const audioCtx = new AudioContext();
+
+  const audioElement = document.querySelector('audio');
+  const flap = audioCtx.createMediaElementSource(audioElement);
+
+
+
+
   var animated = document.querySelectorAll('.content');
   animated.forEach(function(item) {
     item.onanimationend = () => {
