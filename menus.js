@@ -14,46 +14,46 @@ var values = {
 var characterShown = false;
 $(document).ready(function() {
 
-  const AudioContext = window.AudioContext;
-  const audioCtx = new AudioContext();
-
-  const audioElement = document.querySelector('audio');
-  const flap = audioCtx.createMediaElementSource(audioElement);
 
 
 
-
-  var animated = document.querySelectorAll('.content');
-  animated.forEach(function(item) {
-    item.onanimationend = () => {
-    console.log(item.className);
-    if (item.className == 'content clickedContent hideContent') {
-      console.log('Animation over');
-        console.log(item);
-        item.className = 'content clickedContent hideContent hiddenContent';
-      };
-  };
-  });
 
   $(".item").mousedown(function() {
 		console.log("LINK NOT FOUND");
 		$(this).html(linkNot);
 
-    if (this.id == "character" && characterShown)
-      $(".content").removeClass("clickedContent")
-      $(".content").addClass("hideContent")
+
+
+
+    if (this.id == "character" && characterShown) {
+
+            var premiumContentNodes = $('.content');
+      let premiumContent = Array.from(premiumContentNodes);
+      premiumContent.forEach(function(event) {
+        event.addEventListener( 'webkitAnimationEnd', function(event) { $(this).addClass("hiddenContent"); }, false );
+      });
+    };
+      $(".content").removeClass("clickedContent");
+      $(".content").addClass("hideContent");
+    characterShown = false;
       console.log(characterShown);
-      characterShown = false;
+
   });
-	$(".item").mouseup(function() {
-		console.log("MOUSEUP ON HANDBOOKS");
+
+
+    $(".item").mouseup(function() {
+
+
+    console.log("MOUSEUP ON HANDBOOKS");
 		console.log(values[this.id]);
-    if (this.id == "character" && !characterShown)
+    if (this.id == "character" && !characterShown) {
+
+
       $(".content").removeClass("hideContent hiddenContent")
       $(".content").addClass("clickedContent")
       console.log(characterShown);
       characterShown = true;
-
+    };
     $(this).html(values[this.id]);
 	});
 
