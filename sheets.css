@@ -47,16 +47,17 @@
 	transition: opacity 1s;
   animation-duration: 3s;
   animation-name: slideopen;
+
 }
 .mapContent {
+  background-image: url('res/Tulip_CropRobertEder.jpg');
   display: none;
 	height: 400px;
-	opacity: .5;
+	opacity: 1;
 	width: 55%;
   grid-gap: 0px;
   grid-column:2;
   grid-auto-rows:400px;
-	background-color: Cyan;
 	text-align: center;
 	transition: opacity 1s;
   animation-duration: 3s;

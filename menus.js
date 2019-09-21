@@ -27,6 +27,7 @@ function RemoveMap() {
 
 var characterShown = false;
 var mapShown = false;
+var blocking = false;
 $(document).ready(function() {
 
 
@@ -38,6 +39,7 @@ $(document).ready(function() {
       document.addEventListener('webkitAnimationEnd', RemoveInventory, true);
       console.log(characterShown);
       characterShown = false;
+      blocking = false;
       return;
     };
 
@@ -50,14 +52,16 @@ $(document).ready(function() {
       $('.mapContent').css('animation', '.25s 1 sink');
       document.addEventListener('webkitAnimationEnd', RemoveMap, true);
       mapShown = false;
+      blocking = false;
       console.log(characterShown);
       return;
     };
-    if (!mapShown) {
+    if (!mapShown && !blocking) {
       $('.mapContent').css('display', 'block');
 
       document.removeEventListener('webkitAnimationEnd', RemoveMap, true);
       mapShown = true;
+      blocking = true;
       console.log(characterShown);
     };
   if (characterShown) {
@@ -66,6 +70,7 @@ $(document).ready(function() {
       document.addEventListener('webkitAnimationEnd', RemoveInventory, true);
       console.log(characterShown);
       characterShown = false;
+      blocking = false;
       return;
     };
 
@@ -82,14 +87,16 @@ $(document).ready(function() {
       $('.inventory').css('animation', '.25s 1 sink');
       document.addEventListener('webkitAnimationEnd', RemoveInventory, true);
       characterShown = false;
+      blocking = false;
       console.log(characterShown);
       return;
     };
-    if (!characterShown) {
+    if (!characterShown && !blocking) {
       $('.inventory').css('display', 'grid');
 
       document.removeEventListener('webkitAnimationEnd', RemoveInventory, true);
       characterShown = true;
+      blocking = true;
       console.log(characterShown);
     };
   });
