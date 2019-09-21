@@ -1,6 +1,6 @@
 .wrapper {
   align: right;
-	background-color: Gray;
+  background-image: url('res/bg.jpg');
 	height: 1080px;
 
   animation-duration: 3s;
@@ -50,6 +50,7 @@
 
 }
 .mapContent {
+  border-radius: 35px;
   background-image: url('res/Tulip_CropRobertEder.jpg');
   display: none;
 	height: 400px;
@@ -138,7 +139,16 @@
   animation: .25s 2 alternate bounce, slideopen;
 
 }
-
+#character:hover {
+  opacity:1;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+#map:hover {
+  opacity:1;
+  padding-left: 1em;
+  padding-right: 1em;
+}
 .item:hover {
 	opacity:1;
 	padding-left: 1em;
