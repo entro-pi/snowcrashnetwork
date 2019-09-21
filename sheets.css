@@ -1,4 +1,5 @@
 .wrapper {
+  align: right;
 	background-color: Gray;
 	height: 1080px;
 
@@ -37,7 +38,33 @@
   animation-duration: 3s;
   animation-name: slideopen;
 }
-.content {
+#map {
+	height: 76px;
+	opacity: .5;
+	width: 30%;
+	background-color: Cyan;
+	text-align: center;
+	transition: opacity 1s;
+  animation-duration: 3s;
+  animation-name: slideopen;
+}
+.mapContent {
+  display: none;
+	height: 400px;
+	opacity: .5;
+	width: 55%;
+  grid-gap: 0px;
+  grid-column:2;
+  grid-auto-rows:400px;
+	background-color: Cyan;
+	text-align: center;
+	transition: opacity 1s;
+  animation-duration: 3s;
+  animation-name: slideopen;
+
+
+}
+.inventory {
 	height: 76px;
 	opacity: .5;
 	display: none;
@@ -52,19 +79,19 @@
   animation: .25s 2 alternate bounce, .5s 1 twirl;
 
 }
-.characterContent {
+.characterinventory {
   animation-duration: .5s
   animation-name: twirl;
   display: grid;
 }
-.sinkContent {
+.sinkinventory {
   webkitAnimationName: sink;
   animation-duration: .5s;
 }
-.hiddenContent {
+.hiddeninventory {
  display: none;
 }
-.content:hover {
+.inventory:hover {
    opacity: 1;
     padding-left: 1em;
     padding-right: 1em;
