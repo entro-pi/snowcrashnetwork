@@ -28,7 +28,15 @@ function RemoveMap() {
 var characterShown = false;
 var mapShown = false;
 var blocking = false;
+//sounds
+
+
+var inventoryOpenSound = new Howl({
+  src: ['res/enterChar.wav'] });
+
 $(document).ready(function() {
+
+
 
 
   //for all items in the menu
@@ -78,8 +86,6 @@ $(document).ready(function() {
   });
 
 
-
-
   //Character
   $('#character').mouseup(function() {
     if (characterShown) {
@@ -94,6 +100,7 @@ $(document).ready(function() {
     if (!characterShown && !blocking) {
       $('.inventory').css('display', 'grid');
 
+      inventoryOpenSound.play();
       document.removeEventListener('webkitAnimationEnd', RemoveInventory, true);
       characterShown = true;
       blocking = true;
