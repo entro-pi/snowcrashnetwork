@@ -11,23 +11,32 @@ var values = {
   content: " <br>Content",
 };
 
+function RemoveContent() {
+        $('.content').css('display', 'none');
+        $('.content').css('animation', '.5s 1 twirl');
+        $('.content').css('webkitAnimationName', 'twirl');
+        console.log("WEBKIDEND");
+}
+
 var characterShown = false;
 $(document).ready(function() {
 
-  $('#character').click(function() {
+  $('#character').mouseup(function() {
     if (characterShown) {
      $('.content').css('webkitAnimationName', 'sink');
       $('.content').css('animation', '.25s 1 sink');
-      document.addEventListener('webkitAnimationEnd', function() {
-        $('.content').css('display', 'none');
-      });
+      document.addEventListener('webkitAnimationEnd', RemoveContent, true);
       characterShown = false;
+      console.log(characterShown);
+      return;
     };
     if (!characterShown) {
       $('.content').css('display', 'grid');
-      characterShown = true;
-    };
 
+      document.removeEventListener('webkitAnimationEnd', RemoveContent, true);
+      characterShown = true;
+      console.log(characterShown);
+    };
   });
 
 });
