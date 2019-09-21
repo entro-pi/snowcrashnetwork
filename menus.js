@@ -21,6 +21,18 @@ function RemoveContent() {
 var characterShown = false;
 $(document).ready(function() {
 
+  $('.item').mouseup(function () {
+    if (characterShown) {
+     $('.content').css('webkitAnimationName', 'sink');
+      $('.content').css('animation', '.25s 1 sink');
+      document.addEventListener('webkitAnimationEnd', RemoveContent, true);
+      console.log(characterShown);
+      characterShown = false;
+      return;
+    };
+
+  });
+
   $('#character').mouseup(function() {
     if (characterShown) {
      $('.content').css('webkitAnimationName', 'sink');

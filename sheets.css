@@ -26,7 +26,17 @@
   animation-name: slideopen;
 }
 
+#character {
 
+	height: 76px;
+	opacity: .5;
+	width: 30%;
+	background-color: Cyan;
+	text-align: center;
+	transition: opacity 1s;
+  animation-duration: 3s;
+  animation-name: slideopen;
+}
 .content {
 	height: 76px;
 	opacity: .5;
