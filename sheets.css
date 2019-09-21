@@ -42,14 +42,14 @@
   animation: .25s 2 alternate bounce, .5s 1 twirl;
 
 }
-
-.clickedContent {
+.characterContent {
   animation-duration: .5s
   animation-name: twirl;
   display: grid;
 }
-.hideContent {
-  animation: .5s sink;
+.sinkContent {
+  webkitAnimationName: sink;
+  animation-duration: .5s;
 }
 .hiddenContent {
  display: none;
